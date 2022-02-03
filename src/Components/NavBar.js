@@ -25,7 +25,6 @@ function NavigationBar({path}) {
     [
       { key: 0, to: '/', text: 'Dashboard' },
       { key: 1, to: '/alluser', text: 'Users' },
-      { key: 2, to: '/allsiteuser', text: 'Site Users' },
       { key: 3, to: '/alldoctors', text: 'Doctors' },
       { key: 4, to: '/alldiseases', text: 'Diseases' },
       { key: 5, to: '/allquections', text: 'Quections' },

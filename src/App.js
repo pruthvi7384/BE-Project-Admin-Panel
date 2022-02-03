@@ -11,10 +11,8 @@ import AllDiseases from './Pages/DataShowTable/AllDiseases';
 import AllDoctor from './Pages/DataShowTable/AllDoctor';
 import AllFedbacks from './Pages/DataShowTable/AllFedbacks';
 import AllQuection from './Pages/DataShowTable/AllQuection';
-import AllSiteUser from './Pages/DataShowTable/AllSiteUser';
 import AllUser from './Pages/DataShowTable/AllUser';
 import Errore from './Pages/Error/Errore';
-import ContactDetailes from './SubPages/ContactDetailes';
 import DiseaseDetaile from './SubPages/DiseaseDetaile';
 import FeedbackDetailes from './SubPages/FeedbackDetailes';
 import QuectionDetailes from './SubPages/QuectionDetailes';
@@ -63,11 +61,6 @@ function App() {
             <UserProfile/>
             <Footer/>
         </Route>
-        <Route exact path="/allsiteuser">
-          <NavBar path="/allsiteuser"/>
-          <AllSiteUser/>
-          <Footer/>
-        </Route>
         <Route exact path="/alldoctors">
           <NavBar path="/alldoctors"/>
           <AllDoctor/>
@@ -106,11 +99,6 @@ function App() {
         <Route exact path="/allcontacts">
             <NavBar path="/allcontacts"/>
             <AllContactDetailes/>
-            <Footer/>
-        </Route>
-        <Route exact path="/allcontacts/:id">
-            <NavBar path="/allcontacts/:id"/>
-            <ContactDetailes/>
             <Footer/>
         </Route>
         <Route path='/logout'>

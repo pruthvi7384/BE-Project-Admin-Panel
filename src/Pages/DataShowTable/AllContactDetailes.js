@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import { Alert, Container, Row, Spinner, Table } from 'react-bootstrap';
 import Moment from 'react-moment';
 import { useHistory } from 'react-router';
@@ -55,7 +55,7 @@ function AllContactDetailes() {
                     ?
                     <Alert variant="info" onClose={() => {
                         setShow(false);
-                        History.push('/login');
+                        History.push('/');
                     }
                     } dismissible>
                     <p className='text-center'>{message}</p>
@@ -89,9 +89,9 @@ function AllContactDetailes() {
                                     <td>{con.email}</td>
                                     <td>{con.subject}</td>
                                     <td>{con.message}</td>
-                                    <td>{<Moment format='MMMM Do YYYY' from={con.contact_date}/>}</td>
+                                    <td>{<Moment format='DD MMMM YYYY' date={con.contact_date}/>}</td>
                                     <td>{con.answer === 'NA' ? <p>NA</p> : con.answer}</td>
-                                    <td>{con.answer_date === 'NA' ? <p>NA</p> : <Moment format='MMMM Do YYYY' from={con.answer_date}/>}</td>
+                                    <td>{con.answer_date === 'NA' ? <p>NA</p> : <Moment format='DD MMMM YYYY' date={con.answer_date}/>}</td>
                                     <td>
                                         <Replay id={con._id}/>
                                         {" "}
