@@ -229,7 +229,6 @@
         .table_detailes .table_heading h3{
             font-weight: 600;
             color: #008aff;
-            overflow-y: scroll;
         }
         .table_detailes .table_heading p{
             font-weight: 600;

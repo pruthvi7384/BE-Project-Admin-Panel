@@ -45,8 +45,8 @@ function AllDoctor() {
     return (
         <Container className="table_detailes mt-4">
             <Row className="table_heading">
-                <h3>All Users</h3>
-                <p>All Users Detailes Display Here</p>
+                <h3>All Doctors</h3>
+                <p>All Doctors Detailes Display Here</p>
             </Row>
                 { 
                     show 
