@@ -105,7 +105,7 @@ function AllQuection() {
                             ))
                             :
                             <tr>
-                                <td style={{textAlign:'center', fontWeight:'bold', color:'red'}} colSpan={9}>No Once Contact Detailes Found !</td>
+                                <td style={{textAlign:'center', fontWeight:'bold', color:'red'}} colSpan={9}>No Once Quection Detailes Found !</td>
                             </tr>
                         }   
                     </tbody>
