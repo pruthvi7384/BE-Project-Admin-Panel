@@ -255,3 +255,153 @@
             padding: 0px 5px;
         }
 /* ================X===Table===X============ */
+
+/* ===============Error Page=============== */
+    .Error__Page{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        font-weight:bold;
+        background-image: linear-gradient(to right, rgb(226, 255, 254) 50%, #fff 50%);
+        font-family: 'Poppins', sans-serif;
+    }
+    .Error__Page h1{
+        font-size:80px;
+        color:red;
+        font-weight: 600;
+    }
+    .Error__Page p{
+        font-size:20px;
+        color:#008aff;
+        font-weight: 600;
+    }
+    .Error__Page .btn{
+        background-color: #008aff;
+        font-family: 'Poppins', sans-serif;
+        font-weight:600;
+    }
+/* ============X===Error Page===X============ */
+
+/* ===========Dashboard Analytic Styled========= */
+    .dashboard .dashboard_card{
+        background-color: #ffffff;
+        box-shadow:  0 4px 16px rgb(0 0 0 / 10%);
+        padding:20px;
+        margin: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .dashboard .dashboard_card .dashboard_card_body{
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .dashboard .dashboard_card .dashboard_card_body h4{
+        color: #444444;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: 600;
+    }
+    .dashboard .dashboard_card .dashboard_card_body h2{
+        color: #008aff;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: 600;
+    }
+/* =========X==Dashboard Analytic Styled==X======= */
+/* =========Profile Page Styling============= */
+.profile_page{
+    padding:20px;
+    box-shadow:  0 4px 16px rgb(0 0 0 / 10%);
+    border-radius:5px;
+}
+.profile_page .profile_heding{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.profile_page .profile_heding h3{
+    color: #333333;
+    font-weight: 600;
+}
+.profile_page .profile_heding h3 span{
+    color: #008aff;
+}
+.profile_page .profile_heding p{
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #928f88;
+}
+
+/* ==========Profile============ */
+    .profile_page .profile{
+        justify-content: center;
+    }
+    .profile_page .profile ul li{
+        margin-top: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: #777777;
+        font-size:18px;
+    }
+    .profile_page .profile ul li span{
+        color: #444444;
+        margin-left:5px;
+    }
+/* ========X==Profile==X========== */
+
+/* ==========Quection Section========== */
+    .profile_page .quection_profile{
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+    }
+    .profile_page .quection_profile h3{
+        text-align: center;
+        color: #333333;
+        font-weight: 600;
+    }
+    .profile_page .quection_profile h3 span{
+        color: #008aff;
+    }
+    .profile_page .quection_profile p{
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #928f88;
+    }
+    .profile_page .quection_profile .accordion-flush .accordion-item .accordion-button {
+        font-weight: 600;
+        color: #333333;
+    }
+    .profile_page .quection_profile .accordion-body {
+        font-weight:500;
+        color:#444444;
+        text-align: justify;
+    }
+    .add_Profile{
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        background-color: #008aff;
+        border:none;
+    }
+    .add_Profile:hover{
+        font-weight: 500;
+        background-color: #008aff;
+    }
+    /* ===============Responsive========= */
+        @media(max-width:768px){
+            .profile_page .profile_heding h3, .profile_page .quection_profile h3{
+                font-size:20px;
+            }
+            .profile_page .profile_heding p, .profile_page .quection_profile p{
+                font-size:14px;
+            }
+            .profile_page .profile ul li{
+                font-size:12px;
+            }
+        }
+    /* ===============Responsive========= */
+/* =======X==Profile Page Styling==X=========== */
+

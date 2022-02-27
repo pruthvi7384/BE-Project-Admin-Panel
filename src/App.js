@@ -18,7 +18,7 @@ import FeedbackDetailes from './SubPages/FeedbackDetailes';
 import QuectionDetailes from './SubPages/QuectionDetailes';
 import UserProfile from './SubPages/UserProfile';
 import { ProfileProvider } from './Pages/Account/Context.Provider';
-import AddProfile from './Pages/Profile/AddProfile';
+import Profile from './Pages/Profile/Profile';
 import Logout from './Pages/Account/Logout';
 import AdminLogin from './Pages/Account/AdminLogin';
 
@@ -46,9 +46,9 @@ function App() {
           <AdminLogin/>
           <Footer/>
         </Route>
-        <Route exact path="/profile/:id">
+        <Route exact path="/profile">
           <NavBar path="/profile"/>
-          <AddProfile/>
+          <Profile/>
           <Footer/>
         </Route>
         <Route exact path="/alluser">

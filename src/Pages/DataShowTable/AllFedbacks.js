@@ -91,10 +91,10 @@ function AllFedbacks() {
                                     <td>{con.email}</td>
                                     <td>{con.feedback}</td>
                                     <td>{<Moment format='DD MMMM YYYY' date={con.feedback_date}/>}</td>
-                                    <td>{con.status ? <p>Panding</p> : <p>Approved</p> }</td>
-                                    <td>{con.visibility ? <p>Panding</p> : <p>Approved</p> }</td>
+                                    <td>{con.status ? <p>Approved</p> : <p>Pending</p> }</td>
+                                    <td>{con.visibility ? <p>Approved</p> : <p>Pending</p> }</td>
                                     <td>
-                                        <i className="fa-solid fa-eye-slash" onClick={async ()=> {
+                                        <i style={{color:'#008aff', fontSize: '20px', cursor: 'pointer'}} className="fas fa-low-vision" onClick={async ()=> {
                                             try{
                                                 setIsloading(true);
                                                const resReplay = await axios.put(`https://lifestylediseases.herokuapp.com/feedback/${con._id}`,{
@@ -108,7 +108,7 @@ function AllFedbacks() {
                                             }
                                         }}></i>
                                         {" "}
-                                        <i className="fa-solid fa-browser" onClick={async ()=> {
+                                        <i style={{color:'#008aff', fontSize: '20px', cursor: 'pointer'}} className="fad fa-browser" onClick={async ()=> {
                                             try{
                                                 setIsloading(true);
                                                const resReplay = await axios.put(`https://lifestylediseases.herokuapp.com/feedback/${con._id}`,{
