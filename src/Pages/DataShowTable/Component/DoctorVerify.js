@@ -4,7 +4,6 @@ import { Alert, Button, Col, FloatingLabel, Form, Modal, Row } from 'react-boots
 import Moment from 'react-moment';
 
 function DoctorVerify({id}) {
-    console.log(id)
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState('');
     const [popup, setPopup] = useState(false);
@@ -248,7 +247,7 @@ function DoctorVerify({id}) {
                                         }
                                     }
                                 }>
-                                    <option value={doctorprofile.status}>{doctorprofile.status === false ? 'Panding' : 'Verified'}</option>
+                                    <option value={doctorprofile.status}>{doctorprofile.status ? 'Verified' : 'Pending'}</option>
                                     <option value="false">Panding</option>
                                     <option value="true">Verified</option>
                                 </Form.Select>

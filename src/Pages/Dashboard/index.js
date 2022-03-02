@@ -18,6 +18,8 @@ function Dashboard() {
     // ==============If Admin Is Not Login===========
     if(!profile){
         History.push('/login');
+    }else if(profile.role === 'doctor'){
+        History.push('/allquections');
     }
 
     // ===========All Data Featch from MongoDb Database===========

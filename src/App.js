@@ -13,14 +13,12 @@ import AllFedbacks from './Pages/DataShowTable/AllFedbacks';
 import AllQuection from './Pages/DataShowTable/AllQuection';
 import AllUser from './Pages/DataShowTable/AllUser';
 import Errore from './Pages/Error/Errore';
-import DiseaseDetaile from './SubPages/DiseaseDetaile';
-import FeedbackDetailes from './SubPages/FeedbackDetailes';
-import QuectionDetailes from './SubPages/QuectionDetailes';
-import UserProfile from './SubPages/UserProfile';
 import { ProfileProvider } from './Pages/Account/Context.Provider';
 import Profile from './Pages/Profile/Profile';
 import Logout from './Pages/Account/Logout';
 import AdminLogin from './Pages/Account/AdminLogin';
+import SpecificDoctorDisease from './Pages/DataShowTable/SpecificDoctorDisease';
+import AddDoctorProfile from './Pages/Profile/AddDoctorProfile';
 
 function App() {
   return (
@@ -51,15 +49,15 @@ function App() {
           <Profile/>
           <Footer/>
         </Route>
+        <Route exact path="/profile/register">
+          <NavBar path="/profile/register"/>
+          <AddDoctorProfile/>
+          <Footer/>
+        </Route>
         <Route exact path="/alluser">
           <NavBar path="/alluser"/>
           <AllUser/>
           <Footer/>
-        </Route>
-        <Route exact path="/alluser/:id">
-            <NavBar path="/alluser/:id"/>
-            <UserProfile/>
-            <Footer/>
         </Route>
         <Route exact path="/alldoctors">
           <NavBar path="/alldoctors"/>
@@ -71,9 +69,9 @@ function App() {
             <AllDiseases/>
             <Footer/>
         </Route>
-        <Route exact path="/alldiseases/:id">
-            <NavBar path="/alldiseases/:id"/>
-            <DiseaseDetaile/>
+        <Route exact path="/doctordisease">
+            <NavBar path="/doctordisease"/>
+            <SpecificDoctorDisease/>
             <Footer/>
         </Route>
         <Route exact path="/allquections">
@@ -81,19 +79,9 @@ function App() {
             <AllQuection/>
             <Footer/>
         </Route>
-        <Route exact path="/allquections/:id">
-            <NavBar path="/allquections/:id"/>
-            <QuectionDetailes/>
-            <Footer/>
-        </Route>
         <Route exact path="/allfeedbacks">
             <NavBar path="/allfeedbacks"/>
             <AllFedbacks/>
-            <Footer/>
-        </Route>
-        <Route exact path="/allfeedbacks/:id">
-            <NavBar path="/allfeedbacks/:id"/>
-            <FeedbackDetailes/>
             <Footer/>
         </Route>
         <Route exact path="/allcontacts">

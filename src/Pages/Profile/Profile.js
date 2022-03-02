@@ -5,7 +5,8 @@ import Moment from 'react-moment';
 import { useProfile } from '../Account/Context.Provider';
 import EditProfile from './EditProfile';
 function Profile() {
-   const {profile} = useProfile();
+   const {profile,doctorProfile} = useProfile();
+   const doctorStatus = doctorProfile ? doctorProfile.verification_status.status : ''
    const History = useHistory();
 
    if(!profile){
@@ -16,7 +17,13 @@ function Profile() {
         <Container className="profile_page mt-4">
             <Row className="profile_heding"> 
                 <h3 ><span>{profile ? profile.name : ''}</span> Profile</h3>
-                <p>Your Profile And Quetion Ask History Here</p>
+                <p>Your Profile Display Here</p>
+            </Row>
+            <Row className="text-center mt-2">
+                <Col xl={12}>
+                    <p style={{fontWeight: 600, color:'#333333', fontSize: '18px'}}>Verification Status : <span style={{color:'#008aff', textTransform:'uppercase'}}>{doctorStatus ? 'Approved' : 'Pending'}</span></p>
+                    <p style={{fontWeight: 600, color:'red'}}><span span style={{color:'#008aff', textTransform:'uppercase'}}>Note : </span> If your verification status is pending Then You Can not Access Other Tab.</p>
+                </Col>
             </Row>
             <Row className="profile mt-2">
                <Col xl="4">

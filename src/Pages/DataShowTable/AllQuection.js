@@ -9,13 +9,16 @@ import Answer from './Component/Answer';
 function AllQuection() {
     const [quection, setQuection] = useState([]);
     const [loading, setIsloading] = useState(true);
-    const {profile} = useProfile();
+    const {profile,doctorProfile} = useProfile();
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState('');
     const History = useHistory();
+    const doctorStatus = doctorProfile ? doctorProfile.verification_status.status : ''
 
     if(!profile){
         History.push('/alldiseases');
+    }else if(!doctorProfile || doctorStatus === false){
+        History.push('/profile');
     }
 
     useEffect(()=>{

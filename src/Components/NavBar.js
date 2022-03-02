@@ -6,21 +6,26 @@ import { useProfile } from '../Pages/Account/Context.Provider';
 function NavigationBar({path}) {
   const History = useHistory();
   const BrowserPath = History.location.pathname;
-  const { profile } =  useProfile();
-
+  const { profile,doctorProfile } =  useProfile();
+  const doctorStatus = doctorProfile ? doctorProfile.verification_status.status : ''
   const LINKS = !profile ?
    [
     { key: 8, to: '/signin' , text: 'SignUp' },
     { key: 9, to: '/login', text:  'LogIn' }
   ]
   :
-    profile.role === 'doctor'
+    profile.role === 'doctor' 
     ?
-    [
-      { key: 4, to: '/alldiseases', text: 'Diseases' },
-      { key: 5, to: '/allquections', text: 'Quections' },
-      { key: 6, to: '/allfeedbacks', text: 'Feedbacks' },
-    ]
+      doctorStatus === true
+      ?
+      [
+        { key: 4, to: '/doctordisease', text: 'Diseases' },
+        { key: 5, to: '/allquections', text: 'Quections' },
+      ]
+      :
+      [
+        { key: 1, to: '/profile/register', text: 'Register' },
+      ]
     :
     [
       { key: 0, to: '/', text: 'Dashboard' },
@@ -31,6 +36,7 @@ function NavigationBar({path}) {
       { key: 6, to: '/allfeedbacks', text: 'Feedbacks' },
       { key: 7, to: '/allcontacts', text: 'Contacts' }
     ]
+  
   const DROPDOWN = [
     { key : 0, to: '/profile', text: 'Profile' },
     { key : 1, to: '/logout', text: 'LogOut' }

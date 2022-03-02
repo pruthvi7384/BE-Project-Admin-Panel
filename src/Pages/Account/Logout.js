@@ -3,8 +3,9 @@ import { useProfile } from './Context.Provider'
 
 function Logout() {
     const History = useHistory();
-    const {setProfile} = useProfile();
+    const {setProfile,setDoctorProfile} = useProfile();
     setProfile('');
+    setDoctorProfile('');
     History.push('/');
 
     return(

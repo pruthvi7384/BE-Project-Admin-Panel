@@ -7,22 +7,25 @@ import { useProfile } from '../Account/Context.Provider';
 import AddDisease from './Component/AddDisease';
 import DiseaseVerify from './Component/DiseaseVerify';
 
-function AllDiseases() {
+function SpecificDoctorDisease() {
     const [diseases, setDiseases] = useState([]);
-    const {profile} = useProfile();
+    const {profile,doctorProfile} = useProfile();
     const [loading, setIsloading] = useState(true);
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState('');
+    const doctorStatus = doctorProfile ? doctorProfile.verification_status.status : ''
     const History = useHistory();
     if(!profile){
         History.push('/login');
-    }else if(profile.role === 'doctor'){
-        History.push('/allquections');
+    }else if(profile.role === 'admin'){
+        History.push('/');
+    }else if(!doctorProfile || doctorStatus === false){
+        History.push('/profile');
     }
     useEffect(()=>{
         const diseasesGet = async ()=>{
             try{
-                const res = await axios.get('https://lifestylediseases.herokuapp.com/alldisease');
+                const res = await axios.get(`https://lifestylediseases.herokuapp.com/alldisease/${profile._id}`);
                 setDiseases(res.data);
                 setIsloading(false);
             }catch(e){
@@ -30,7 +33,7 @@ function AllDiseases() {
             }
         }
         diseasesGet();
-    },[]);
+    },[profile._id]);
     
     if(loading){
         return(
@@ -95,8 +98,6 @@ function AllDiseases() {
                                     <td width = "20%" style={{textAlign: 'center'}}>
                                         <DiseaseVerify id={us._id} role="View" icon="fas fa-eye"/>
                                         {" "}
-                                        <DiseaseVerify id={us._id} role="Verify" icon="fas fa-disease"/>
-                                        {" "}
                                         <DiseaseVerify id={us._id} role="Edit" icon="fas fa-edit"/>
                                         {" "}
                                         <i className="fas fa-trash" onClick={async ()=> {
@@ -123,4 +124,4 @@ function AllDiseases() {
     )
 }
 
-export default AllDiseases
+export default SpecificDoctorDisease;
