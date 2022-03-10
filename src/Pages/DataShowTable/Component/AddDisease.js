@@ -18,6 +18,7 @@ function AddDisease({role,icon}) {
         precaution:[],
         medicine:[],
         vaccine:[],
+        pin_code: '',
         city:'',
         area:'',
     });
